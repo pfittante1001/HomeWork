@@ -129,8 +129,8 @@ namespace HomeWork
                 largestNum = num3;
                 Console.WriteLine("The third number you entered " + largestNum + " is the largest");
             }
-            */
 
+           // Problem four calculates the mean of four numbers
             Console.Write("Please enter the first of four numbers ");
             int num1 = int.Parse(Console.ReadLine());
 
@@ -147,6 +147,37 @@ namespace HomeWork
             double mean = ttlNum / 4;
 
             Console.WriteLine("The average number of the four you entered is " + mean);
-                }
+           
+            //Final Jepordy Problem
+            Console.Write("Please enter your FIZZ number: ");
+            int fizzNum = int.Parse(Console.ReadLine());
+
+            Console.Write("Please enter your BUZZ number: ");
+            int buzzNum = int.Parse(Console.ReadLine());
+
+            Console.Write("Please enter the number you want to test: ");
+            int testNum = int.Parse(Console.ReadLine());
+
+            Console.WriteLine();
+
+            if (((fizzNum % testNum) == 0) && ((buzzNum % testNum) == 0))
+            {
+                Console.WriteLine("FIZZBUZZI");
+
+            }else if (((fizzNum % testNum) != 0) && ((buzzNum % testNum) == 0))
+            {
+                Console.WriteLine("BUZZI");
+            }
+            else if (((fizzNum % testNum) == 0) && ((buzzNum % testNum) != 0))
+            {
+                Console.WriteLine("FIZZ");
+
+            }else
+            {
+                Console.WriteLine(testNum);
+            }
+            */
+
+        }
     }
 }
