@@ -179,12 +179,16 @@ namespace HomeWork
             {
                 Console.WriteLine("FIZZBUZZI");
 
-            }else if (((testNum % fizzNum) != 0) && ((testNum % buzzNum) == 0))
+            }
+            else if (((testNum % fizzNum) != 0) && ((testNum % buzzNum) == 0))
             {
                 Console.WriteLine("BUZZI");
             }
             else if (((testNum % fizzNum) == 0) && ((testNum % buzzNum) != 0))
             {
+
+
+
                 Console.WriteLine("FIZZ");
 
             }else
