@@ -147,28 +147,43 @@ namespace HomeWork
             double mean = ttlNum / 4;
 
             Console.WriteLine("The average number of the four you entered is " + mean);
-           
+           */
             //Final Jepordy Problem
             Console.Write("Please enter your FIZZ number: ");
             int fizzNum = int.Parse(Console.ReadLine());
+             if (fizzNum < 1 || fizzNum > 9)
+            {
+                Console.WriteLine("Please enter a number between 1 - 9");
+                return;
+            }
 
             Console.Write("Please enter your BUZZ number: ");
             int buzzNum = int.Parse(Console.ReadLine());
+            if (fizzNum < 1 || fizzNum > 9)
+            {
+                Console.WriteLine("Please enter a number between 1 - 9");
+                return;
+            }
 
             Console.Write("Please enter the number you want to test: ");
             int testNum = int.Parse(Console.ReadLine());
+            if (testNum <= 0)
+            {
+                Console.WriteLine("Please enter a number than 0");
+                return;
+            }
 
             Console.WriteLine();
 
-            if (((fizzNum % testNum) == 0) && ((buzzNum % testNum) == 0))
+            if (((testNum % fizzNum) == 0) && ((testNum % buzzNum) == 0))
             {
                 Console.WriteLine("FIZZBUZZI");
 
-            }else if (((fizzNum % testNum) != 0) && ((buzzNum % testNum) == 0))
+            }else if (((testNum % fizzNum) != 0) && ((testNum % buzzNum) == 0))
             {
                 Console.WriteLine("BUZZI");
             }
-            else if (((fizzNum % testNum) == 0) && ((buzzNum % testNum) != 0))
+            else if (((testNum % fizzNum) == 0) && ((testNum % buzzNum) != 0))
             {
                 Console.WriteLine("FIZZ");
 
@@ -176,7 +191,7 @@ namespace HomeWork
             {
                 Console.WriteLine(testNum);
             }
-            */
+            
 
         }
     }
