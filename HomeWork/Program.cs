@@ -149,52 +149,96 @@ namespace HomeWork
             Console.WriteLine("The average number of the four you entered is " + mean);
            */
             //Final Jepordy Problem
-            Console.Write("Please enter your FIZZ number: ");
-            int fizzNum = int.Parse(Console.ReadLine());
-             if (fizzNum < 1 || fizzNum > 9)
+
+            string exitGame = " ";
+            int[] gameNum = new int[3];
+            while (exitGame != "quit")
             {
-                Console.WriteLine("Please enter a number between 1 - 9");
-                return;
+                Console.Write("Welcome to the Fizz Buzz Game: \n");
+                Console.Write("Please enter two FizzBuzz numbers 1 - 9 and one test number: \n");
+
+                for (int i = 0; i < gameNum.Length; i++)
+                {
+                    Console.Write("Please enter a number: ");
+
+                    gameNum[i] = int.Parse(Console.ReadLine());
+
+                    if ( i != 2 && (gameNum[i] < 1 || gameNum[i] > 9))
+                    {
+                        Console.WriteLine("Please enter a number between 1 - 9");
+                        
+                        gameNum[i] = int.Parse(Console.ReadLine());
+                    }
+                }
+
+                if (((gameNum[2] % gameNum[0]) == 0) && ((gameNum[2] % gameNum[1]) == 0))
+                {
+                    Console.WriteLine("FIZZBUZZI");
+                }
+                else if (((gameNum[2] % gameNum[0]) != 0) && ((gameNum[2] % gameNum[1]) == 0))
+                {
+                    Console.WriteLine("BUZZI");
+                }
+                else if (((gameNum[2] % gameNum[0]) == 0) && ((gameNum[2] % gameNum[1]) != 0))
+                {
+                    Console.WriteLine("FIZZ");
+                }else
+                {
+                    Console.WriteLine(gameNum[2]);
+                }
+
+                Console.WriteLine("Please enter \"Quit\" to exit or enter to play again");
+                exitGame = Console.ReadLine();
+
             }
 
-            Console.Write("Please enter your BUZZ number: ");
-            int buzzNum = int.Parse(Console.ReadLine());
-            if (fizzNum < 1 || fizzNum > 9)
-            {
-                Console.WriteLine("Please enter a number between 1 - 9");
-                return;
-            }
+            
 
-            Console.Write("Please enter the number you want to test: ");
-            int testNum = int.Parse(Console.ReadLine());
-            if (testNum <= 0)
-            {
-                Console.WriteLine("Please enter a number than 0");
-                return;
-            }
-
-            Console.WriteLine();
-
-            if (((testNum % fizzNum) == 0) && ((testNum % buzzNum) == 0))
-            {
-                Console.WriteLine("FIZZBUZZI");
-
-            }
-            else if (((testNum % fizzNum) != 0) && ((testNum % buzzNum) == 0))
-            {
-                Console.WriteLine("BUZZI");
-            }
-            else if (((testNum % fizzNum) == 0) && ((testNum % buzzNum) != 0))
-            {
+            //Console.Write("Please enter your FIZZ number: ");
 
 
 
-                Console.WriteLine("FIZZ");
+            //Console.Write("Please enter your FIZZ number: ");
+            //int fizzNum = int.Parse(Console.ReadLine());
+            // if (fizzNum < 1 || fizzNum > 9)
+            //{
+            //    Console.WriteLine("Please enter a number between 1 - 9");
+            //    return;
+            //}
 
-            }else
-            {
-                Console.WriteLine(testNum);
-            }
+            //Console.Write("Please enter your BUZZ number: ");
+            //int buzzNum = int.Parse(Console.ReadLine());
+            //if (fizzNum < 1 || fizzNum > 9)
+            //{
+            //    Console.WriteLine("Please enter a number between 1 - 9");
+            //    return;
+            //}
+
+            //Console.Write("Please enter the number you want to test: ");
+            //int testNum = int.Parse(Console.ReadLine());
+            //if (testNum <= 0)
+            //{
+            //    Console.WriteLine("Please enter a number than 0");
+            //    return;
+            //}
+
+            //Console.WriteLine();
+
+            //if (((testNum % fizzNum) == 0) && ((testNum % buzzNum) == 0))
+            //{
+            //    Console.WriteLine("FIZZBUZZI");
+            //}
+            //else if (((testNum % fizzNum) != 0) && ((testNum % buzzNum) == 0))
+            //{
+            //    Console.WriteLine("BUZZI");
+            //}
+            //else if (((testNum % fizzNum) == 0) && ((testNum % buzzNum) != 0))
+            //{
+            //    Console.WriteLine("FIZZ");
+            //}else
+            //{
+            //    Console.WriteLine(testNum);
+            //}
             
 
         }
